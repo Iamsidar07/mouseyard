@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# **WhatsApp Chat Analyzer**
 
-## Getting Started
+## **Overview**
+This is a web application that analyzes WhatsApp chat logs to provide structured insights. The app uses AI to detect themes, recognize patterns, and map relationships between content categories. It is designed to help users better understand the key themes, behaviors, and insights from their chat logs.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## **Features**
+- **Smart Content Categorization**: Automatically organizes content into actionable categories like "Productivity," "Learning Resources," etc.
+- **Theme Detection**: Identifies overarching themes such as "Motivational Reflections" or "Design Discussions."
+- **Pattern Recognition**: Detects recurring habits, timestamps, and keywords.
+- **Content Relationship Mapping**: Highlights relationships between shared links, reflections, and other categorized content.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## **Setup Instructions**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### **Prerequisites**
+- Node.js (v16+)
+- NPM
+- Google API Key
 
-## Learn More
+### **Installation**
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/iamsidar07/mouseyard.git
+   cd mouseyard
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. **Install Dependencies**
+   ```bash
+   npm install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Set Up Environment Variables**
+   Create a `.env.local` file in the root directory and add the following:
+   ```env
+   GOOGLE_GENERATIVE_AI_API_KEY=your_google_api_key
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. **Start the Development Server**
+   ```bash
+   npm run dev
+   ```
 
-## Deploy on Vercel
+5. **Access the App**
+   Open your browser and navigate to `http://localhost:3000`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## **Usage Instructions**
+1. Upload a `.txt` file exported from WhatsApp chats using the file upload form.
+2. Wait for the app to process and analyze the chat log.
+3. View insights categorized into themes, recurring patterns, links, and content relationships.
+
+---
+
+## **Explanation of Approach**
+
+### **Frontend**
+- **File Upload**: Users upload WhatsApp `.txt` files through a simple form.
+- **Visualization**: The analyzed data is displayed in structured sections (Themes, Links, Patterns, Relationships).
+
+### **Backend**
+- **File Handling**: The file is sent to the backend using `FormData` and parsed.
+- **Analysis**: AI processes the chat log to extract themes, patterns, and relationships. 
+
+### **AI Integration**
+- The Google Generative AI API analyzes the chat content for:
+  - Theme detection (e.g., Productivity, Motivation).
+  - Pattern recognition (recurring phrases, active times).
+  - Relationship mapping (e.g., links associated with themes).
+
+
+### **Output**
+The insights are presented in a user-friendly format, including charts, grouped categories, and detailed sections.
+
+---
+
+## **Technologies Used**
+- **Next.js**: For the frontend and backend.
+- **Google Generative AI API**: For AI-based text analysis.
+- **Tailwind CSS**: For styling the UI.
+- **AI SDK**: For working with the Google Generative AI API.
+---
