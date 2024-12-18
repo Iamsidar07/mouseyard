@@ -12,7 +12,11 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        "instrument-sans": ["var(--font-instrument-sans)"],
+        "instrument-serif": ["var(--font-instrument-serif)"],
+      }
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 } satisfies Config;
