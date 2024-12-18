@@ -45,10 +45,19 @@ function FileUploadForm() {
     }
   };
 
+  const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    setFile(file)
+    if(file?.type !== "text/plain") {
+      setError("Please select a .txt file!")
+    }
+
+  };
+
   return (
     <form onSubmit={handleFileUpload} className="prose lg:prose-xl prose-a:text-blue-600">
       <h1>Upload <span className="italice">.text</span> File</h1>
-      <input type="file" onChange={(e)=>setFile(e.target.files?.[0])} name="fileInput" accept=".txt" className="px-4 py-2 rounded bg-gray-200 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600" />
+      <input type="file" onChange={handleFileChange} name="fileInput" accept=".txt" className="px-4 py-2 rounded bg-gray-200 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600" />
       <button type="submit" disabled={isLoading || !file} className="ml-4 disabled:opacity-80 disabled:cursor-not-allowed">{isLoading ? "Loading..." : "Analyze"}</button>
       {error && <p className="text-red-500">{error}</p>}
       {result && <Markdown remarkPlugins={[remarkGfm]}>{result}</Markdown>}

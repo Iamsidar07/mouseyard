@@ -20,6 +20,7 @@ export const POST = async (req: NextRequest) => {
 ** All your links should be in markdown format **
 ** Do not add any Note like this Note: This link is a placeholder and should be replaced with the actual link if available **
 ** If the link is not available, do not add it **
+** Do not include the timestamp anywhere **
 
 1. **Smart Content Categorization**:
    - Organize the chat content into meaningful categories like "Productivity," "Learning Resources," "Motivational Reflections," and "Technical Discussions."
